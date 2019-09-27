@@ -6,6 +6,9 @@ Constraints: Cannot assume that given coin will be present
 Given: list of coins avaliable
 Outcome: return the number of coinds needed
 
+Since you can't easily install libraries for java I decided not to rewrite a heap class. Instead I went with arrays.sort(), but
+if there is a time constraint I would make a heap sort to get O n(log n) time
+
 Given: 31 cents, [25 cents,10 cents,1 cent] --> 4 coins (10 cents, 10 cents, 10 cents, 1 cent)
 Given: 31 cents [25 cents, 10 cents, 5 cents, 1 cent] --> 3 coins (25 cents, 5 cents, 1 cent)
 Given: 75 cents [10 cents, 5 cents, 1 cent] --> 8 coins (10 cents, 10 cents, 10 cents, 10 cents, 10 cents, 10 cents, 10 cents, 5 cents)
