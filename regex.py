@@ -9,12 +9,14 @@
 def is_match(character,regex):
     return regex in (character + '.')
 
-def last_index(str,regex):
+def last_index(str,regex,in_star = False):
     if len(regex) > 1 and regex[1] == '*':
-        return last_index(str,regex[2:] if 2 < len(regex) else '')
+        return last_index(str,regex[2:] if 2 < len(regex) else '',True)
     if len(regex) > 0:
-            return last_index(str,regex[1:]) if regex[0] == '.' else str.rfind(regex[0])
-    return -1
+        if regex[0] == '.':
+            return last_index(str,regex[1:],False) if in_star else last_index(str,regex[1:],False) - 1
+        return str.rfind(regex[0])
+    return len(str)
 
 def regex_match(str,regex):
     i , index = 0 , 0
@@ -47,3 +49,4 @@ print('')
 print(regex_match('aba','a.*b*')) #True
 print(regex_match('testing','te.*.*.*')) #True
 print(regex_match('testing','te.*.*ngg*')) #True
+print(regex_match('words','w.*..')) #True
