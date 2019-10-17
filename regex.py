@@ -1,7 +1,10 @@
-#regex programming challenge
+#regex programming challenge https://www.youtube.com/watch?v=DduZ1-sMgOg
 #Goal given a string and pattern that can include a specific character,any character, and 0 or more possibilities, determine if string matches regex
 #Constraints (not tested on in video): I need to implement a recurssive lookahead so that tricky patterns
 #like .*.*n will not return false seeing .* can be 0 or many of any character
+
+
+
 
 #Limitations of python: cannot use for statement because we are manipulating both the index of the string and the index of the regex, this adds a couple of uneeded increment lines
 
